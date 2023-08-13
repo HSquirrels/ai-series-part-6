@@ -18,6 +18,11 @@ PrefabInstance:
       propertyPath: Health
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 1002975557820454370, guid: 2350c8b2602580b4ba884ac3f50daf7c,
+        type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 3091255464011214414}
     - target: {fileID: 1002975557820454371, guid: 2350c8b2602580b4ba884ac3f50daf7c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -115,3 +120,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2350c8b2602580b4ba884ac3f50daf7c, type: 3}
+--- !u!95 &3091255464011214414 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2703793664303716593, guid: 2350c8b2602580b4ba884ac3f50daf7c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1108895359441696447}
+  m_PrefabAsset: {fileID: 0}
