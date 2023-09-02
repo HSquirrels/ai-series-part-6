@@ -13,6 +13,7 @@ public class EnemyScriptableObject : ScriptableObject
     public float AttackDelay = 1f;
     public int Damage = 5;
     public float AttackRadius = 1.5f;
+    public bool isRanged = false;
 
     // NavMeshAgent Configs
     public float AIUpdateInterval = 0.1f;
