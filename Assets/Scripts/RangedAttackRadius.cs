@@ -36,7 +36,6 @@ public class RangedAttackRadius : AttackRadius
                 {
                     targetDamageable = Damageables[i];
                     OnAttack?.Invoke(Damageables[i]);
-                    Debug.Log("Ranged unit nav component disabled.");
                     Agent.enabled = false;
                     break;
                 }
@@ -49,10 +48,10 @@ public class RangedAttackRadius : AttackRadius
                 {
                     bullet = poolableObject.GetComponent<Bullet>();
 
-                    bullet.Damage = Damage;
                     bullet.transform.position = transform.position + BulletSpawnOffset;
                     bullet.transform.rotation = Agent.transform.rotation;
-                    bullet.Rigidbody.AddForce(Agent.transform.forward * BulletPrefab.MoveSpeed, ForceMode.VelocityChange);
+
+                    bullet.Spawn(Agent.transform.forward, Damage, targetDamageable.GetTransform());
                 }
             }
             else

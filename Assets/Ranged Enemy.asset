@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 50
   AttackDelay: 0.25
-  Damage: 2
+  Damage: 3
   AttackRadius: 7
-  isRanged: 1
   AIUpdateInterval: 0.1
   Acceleration: 8
   AngularSpeed: 120

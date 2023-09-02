@@ -47,19 +47,7 @@ public class Enemy : PoolableObject, IDamageable
         transform.rotation = lookRotation;
     }
 
-    public virtual void OnEnable()
-    {
-        SetupAgentFromConfiguration();
-    }
-
-    public override void OnDisable()
-    {
-        base.OnDisable();
-
-        Agent.enabled = false;
-    }
-
-    public virtual void SetupAgentFromConfiguration()
+    public virtual void SetupFromScriptableObject()
     {
         Agent.acceleration = EnemyScriptableObject.Acceleration;
         Agent.angularSpeed = EnemyScriptableObject.AngularSpeed;
@@ -71,14 +59,26 @@ public class Enemy : PoolableObject, IDamageable
         Agent.radius = EnemyScriptableObject.Radius;
         Agent.speed = EnemyScriptableObject.Speed;
         Agent.stoppingDistance = EnemyScriptableObject.StoppingDistance;
-        
+
         Movement.UpdateRate = EnemyScriptableObject.AIUpdateInterval;
 
         Health = EnemyScriptableObject.Health;
 
-        (AttackRadius.Collider == null ? AttackRadius.GetComponent<SphereCollider>() : AttackRadius.Collider).radius = EnemyScriptableObject.AttackRadius;
         AttackRadius.AttackDelay = EnemyScriptableObject.AttackDelay;
+        AttackRadius.Collider.radius = EnemyScriptableObject.AttackRadius;
         AttackRadius.Damage = EnemyScriptableObject.Damage;
+    }
+
+    public virtual void OnEnable()
+    {
+        SetupFromScriptableObject();
+    }
+
+    public override void OnDisable()
+    {
+        base.OnDisable();
+
+        Agent.enabled = false;
     }
 
     public void TakeDamage(int Damage)

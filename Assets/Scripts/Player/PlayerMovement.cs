@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private const string Jump = "Jump";
     private const string Landed = "Landed";
 
-    private RaycastHit[] Hits = new RaycastHit[1];
+    private RaycastHit Hit;
 
     private void Awake()
     {
@@ -42,9 +42,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.RaycastNonAlloc(ray, Hits) > 0)
+            if (Physics.Raycast(ray, out Hit))
             {
-                Agent.SetDestination(Hits[0].point);
+                Agent.SetDestination(Hit.point);
             }
         }
 

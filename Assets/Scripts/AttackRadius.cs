@@ -86,7 +86,7 @@ public class AttackRadius : MonoBehaviour
         AttackCoroutine = null;
     }
 
-    protected bool DisabledDamageables(IDamageable Damageable)
+    protected  bool DisabledDamageables(IDamageable Damageable)
     {
         return Damageable != null && !Damageable.GetTransform().gameObject.activeSelf;
     }

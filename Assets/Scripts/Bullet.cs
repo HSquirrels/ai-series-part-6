@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-// will be using rigidbody physics
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : PoolableObject
 {
@@ -10,32 +7,41 @@ public class Bullet : PoolableObject
     public float MoveSpeed = 2f;
     public int Damage = 5;
     public Rigidbody Rigidbody;
+    protected Transform Target;
 
-    private const string DISABLE_METHOD_NAME = "Disable";
+    protected const string DISABLE_METHOD_NAME = "Disable";
 
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         CancelInvoke(DISABLE_METHOD_NAME);
         Invoke(DISABLE_METHOD_NAME, AutoDestroyTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void Spawn(Vector3 Forward, int Damage, Transform Target)
+    {
+        this.Damage = Damage;
+        this.Target = Target;
+        Rigidbody.AddForce(Forward * MoveSpeed, ForceMode.VelocityChange);
+    }
+
+    protected virtual void OnTriggerEnter(Collider other)
     {
         IDamageable damageable;
 
-        if (TryGetComponent<IDamageable>(out damageable))
+        if (other.TryGetComponent<IDamageable>(out damageable))
         {
             damageable.TakeDamage(Damage);
         }
+
         Disable();
     }
 
-    private void Disable()
+    protected void Disable()
     {
         CancelInvoke(DISABLE_METHOD_NAME);
         Rigidbody.velocity = Vector3.zero;

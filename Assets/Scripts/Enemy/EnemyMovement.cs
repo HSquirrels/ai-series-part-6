@@ -45,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
 
         while (gameObject.activeSelf)
         {
-            if (Agent.enabled == true)
+            if (Agent.enabled)
             {
                 Agent.SetDestination(Player.transform.position);
             }
