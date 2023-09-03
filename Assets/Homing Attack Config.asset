@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22cc33c572fa94bf5a550e93e4b16b69, type: 3}
+  m_Name: Homing Attack Config
+  m_EditorClassIdentifier: 
+  isRanged: 1
+  damage: 2
+  attackRadius: 7
+  attackDelay: 1.5
+  bulletPrefab: {fileID: 737748697, guid: 6c0b69b7447c81f48b6c7110deb9568c, type: 3}
+  bulletSpawnOffset: {x: 0, y: 1, z: 0}
+  lineOfSightLayers:
+    serializedVersion: 2
+    m_Bits: 257

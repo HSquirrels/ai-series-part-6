@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77cbe5d8be424a34b9c889ac6525b7cc, type: 3}
   m_Name: Basic Enemy
   m_EditorClassIdentifier: 
+  Prefab: {fileID: -7999956828344115882, guid: 2350c8b2602580b4ba884ac3f50daf7c, type: 3}
+  AttackConfiguration: {fileID: 11400000, guid: 0c821c7cb750b43e3b969ce05a3a41ee,
+    type: 2}
   Health: 100
   AttackDelay: 1
   Damage: 5

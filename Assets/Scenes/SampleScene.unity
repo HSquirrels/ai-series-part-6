@@ -3340,11 +3340,11 @@ MonoBehaviour:
   Player: {fileID: 587367507}
   NumberOfEnemiesToSpawn: 4
   SpawnDelay: 1
-  EnemyPrefabs:
-  - {fileID: -7999956828344115882, guid: 2350c8b2602580b4ba884ac3f50daf7c, type: 3}
-  - {fileID: 2277105976757677033, guid: 7c0f208453ae3904db1521438a88dc85, type: 3}
-  - {fileID: 744707691948855117, guid: c808f4c59dd3d7e438affac60758b695, type: 3}
-  - {fileID: 6759921450970592628, guid: 57b29426b300c1144b18fd01d38db57a, type: 3}
+  Enemies:
+  - {fileID: 11400000, guid: b50eb8e3668f0ee4fb3e9cf74ac442dd, type: 2}
+  - {fileID: 11400000, guid: 6302691e22a3704489c78351de29b4ed, type: 2}
+  - {fileID: 11400000, guid: 09aa1711d4ccf85498978543e59136cc, type: 2}
+  - {fileID: 11400000, guid: 4c151679c0155d647b3360a5208cd20f, type: 2}
   EnemySpawnMethod: 0
 --- !u!43 &301184790
 Mesh:

@@ -65,7 +65,7 @@ MonoBehaviour:
   AutoDestroyTime: 5
   MoveSpeed: 5
   Damage: 5
-  Rigidbody: {fileID: 0}
+  Rigidbody: {fileID: 6105353496410510731}
 --- !u!136 &5647521665905518246
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77cbe5d8be424a34b9c889ac6525b7cc, type: 3}
   m_Name: Tall Enemy
   m_EditorClassIdentifier: 
+  Prefab: {fileID: 2277105976757677033, guid: 7c0f208453ae3904db1521438a88dc85, type: 3}
+  AttackConfiguration: {fileID: 11400000, guid: d21b6c647dd054567845f44ab463038f,
+    type: 2}
   Health: 200
   AttackDelay: 1.5
   Damage: 10

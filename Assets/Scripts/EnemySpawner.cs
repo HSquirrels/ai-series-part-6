@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public Transform Player;
     public int NumberOfEnemiesToSpawn = 5;
     public float SpawnDelay = 1f;
-    public List<Enemy> EnemyPrefabs = new List<Enemy>();
+    public List<EnemyScriptableObject> Enemies = new List<EnemyScriptableObject>();
     public SpawnMethod EnemySpawnMethod = SpawnMethod.RoundRobin;
 
     private NavMeshTriangulation Triangulation;
@@ -16,9 +16,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < EnemyPrefabs.Count; i++)
+        for (int i = 0; i < Enemies.Count; i++)
         {
-            EnemyObjectPools.Add(i, ObjectPool.CreateInstance(EnemyPrefabs[i], NumberOfEnemiesToSpawn));
+            EnemyObjectPools.Add(i, ObjectPool.CreateInstance(Enemies[i].Prefab, NumberOfEnemiesToSpawn));
         }
     }
 
@@ -54,14 +54,14 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnRoundRobinEnemy(int SpawnedEnemies)
     {
-        int SpawnIndex = SpawnedEnemies % EnemyPrefabs.Count;
+        int SpawnIndex = SpawnedEnemies % Enemies.Count;
 
         DoSpawnEnemy(SpawnIndex);
     }
 
     private void SpawnRandomEnemy()
     {
-        DoSpawnEnemy(Random.Range(0, EnemyPrefabs.Count));
+        DoSpawnEnemy(Random.Range(0, Enemies.Count));
     }
 
     private void DoSpawnEnemy(int SpawnIndex)
@@ -71,6 +71,7 @@ public class EnemySpawner : MonoBehaviour
         if (poolableObject != null)
         {
             Enemy enemy = poolableObject.GetComponent<Enemy>();
+            Enemies[SpawnIndex].SetUpEnemy(enemy);
 
             int VertexIndex = Random.Range(0, Triangulation.vertices.Length);
 

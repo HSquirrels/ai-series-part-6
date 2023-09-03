@@ -15,11 +15,12 @@ public class RangedAttackRadius : AttackRadius
     private IDamageable targetDamageable;
     private Bullet bullet;
 
-    protected override void Awake()
+    public void CreateBulletPool()
     {
-        base.Awake();
-
-        BulletPool = ObjectPool.CreateInstance(BulletPrefab, Mathf.CeilToInt((1 / AttackDelay) * BulletPrefab.AutoDestroyTime));
+        if (BulletPool == null)
+        {
+            BulletPool = ObjectPool.CreateInstance(BulletPrefab, Mathf.CeilToInt((1 / AttackDelay) * BulletPrefab.AutoDestroyTime));
+        }
     }
 
     protected override IEnumerator Attack()
