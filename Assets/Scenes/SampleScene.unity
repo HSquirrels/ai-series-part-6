@@ -2364,10 +2364,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 587367507}
-  NumberOfEnemiesToSpawn: 1
+  NumberOfEnemiesToSpawn: 5
   SpawnDelay: 1
   Enemies:
   - {fileID: 11400000, guid: b50eb8e3668f0ee4fb3e9cf74ac442dd, type: 2}
+  - {fileID: 11400000, guid: 67984d48dad204b6397d382a0cce4e9f, type: 2}
+  - {fileID: 11400000, guid: 4c151679c0155d647b3360a5208cd20f, type: 2}
+  - {fileID: 11400000, guid: 6302691e22a3704489c78351de29b4ed, type: 2}
+  - {fileID: 11400000, guid: 09aa1711d4ccf85498978543e59136cc, type: 2}
   EnemySpawnMethod: 0
 --- !u!43 &292132730
 Mesh:

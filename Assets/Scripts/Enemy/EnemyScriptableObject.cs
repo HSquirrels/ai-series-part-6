@@ -11,6 +11,15 @@ public class EnemyScriptableObject : ScriptableObject
     public Enemy Prefab;
     public AttackScriptableObject AttackConfiguration;
 
+    // Movement Stats
+    public EnemyState DefaultState;
+    public float IdleLocationRadius = 4f;
+    public float IdleMovespeedMultiplier = 0.5f;
+    [Range(2, 10)]
+    public int Waypoints = 4;
+    public float LineOfSightRange = 6f;
+    public float FieldOfView = 90f;
+
     // Enemy Stats
     public int Health = 100;
     public float AttackDelay = 0.5f;
@@ -46,6 +55,14 @@ public class EnemyScriptableObject : ScriptableObject
         enemy.Agent.stoppingDistance = StoppingDistance;
 
         enemy.Movement.UpdateRate = AIUpdateInterval;
+        enemy.Movement.DefaultState = DefaultState;
+        enemy.Movement.IdleLocationRadius = IdleLocationRadius;
+        enemy.Movement.IdleMoveSpeedMultiplier = IdleMovespeedMultiplier;
+        enemy.Movement.Waypoints = new Vector3[Waypoints];
+        enemy.Movement.LineOfSightChecker.FieldOfView = FieldOfView;
+        enemy.Movement.LineOfSightChecker.Collider.radius = LineOfSightRange;
+        enemy.Movement.LineOfSightChecker.LineOfSightLayers = AttackConfiguration.lineOfSightLayers;
+
 
         enemy.Health = Health;
 

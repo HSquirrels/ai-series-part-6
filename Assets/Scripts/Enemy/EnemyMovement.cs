@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
     private const string Landed = "Landed";
 
     private Coroutine FollowCoroutine;
-    private Vector3[] Waypoints = new Vector3[4];
+    public Vector3[] Waypoints = new Vector3[4];
 
     private void Awake()
     {

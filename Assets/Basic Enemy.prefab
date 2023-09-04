@@ -2639,7 +2639,7 @@ MonoBehaviour:
   LineOfSightChecker: {fileID: 4605086909403255198}
   UpdateRate: 0.1
   Animator: {fileID: 1002975557932618329}
-  DefaultState: 2
+  DefaultState: 1
   IdleLocationRadius: 4
   IdleMoveSpeedMultiplier: 0.5
   WaypointIndex: 0
