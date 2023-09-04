@@ -82,7 +82,8 @@ public class EnemySpawner : MonoBehaviour
                 // enemy needs to get enabled and start chasing now.
                 enemy.Movement.Player = Player;
                 enemy.Agent.enabled = true;
-                enemy.Movement.StartChasing();
+                enemy.Movement.Triangulation = Triangulation;
+                enemy.Movement.Spawn();
             }
             else
             {
